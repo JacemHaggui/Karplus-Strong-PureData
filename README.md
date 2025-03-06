@@ -1,3 +1,7 @@
+# Karplus Strong Algorithm Implementation in PureData
+![Final Project Overview](resources/Final%20Project.png)
+
+
 # Sound Production:
 To produce the sounds i am using an ADSR envelope applied to white noise.
 
