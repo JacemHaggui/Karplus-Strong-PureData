@@ -1,0 +1,353 @@
+#N canvas 0 37 1728 1080 12;
+#X obj 10 580 cnv 15 675 487 empty empty Mapping\ laptop\ buttons\ to\ keyboard
+184 10 0 14 #e0e0e0 #404040 0;
+#X obj 710 580 cnv 15 426 485 empty empty Flanger\ Effect 131 13 0
+14 #e0e0e0 #404040 0;
+#X obj 610 10 cnv 15 1062 553 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj 10 10 cnv 15 561 554 empty empty Karplus\ Strong\ Algorithm
+126 20 0 18 #e0e0e0 #404040 0;
+#X obj -30 -30 preset_hub k12 1 %hidden%;
+#X floatatom 40 120 5 0 0 0 - - - 0 0 1, f 5;
+#X floatatom 160 132 5 0 0 0 - damping - 0 0 1, f 5;
+#X obj 660 140 bng 51 250 50 0 empty q empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 720 140 bng 51 250 50 0 empty e empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 780 140 bng 51 250 50 0 empty t empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 40 90 receive delay;
+#X text 1010 330 MIDI NOTES;
+#X obj 840 140 bng 51 250 50 0 empty y empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 900 140 bng 51 250 50 0 empty i empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 960 140 bng 51 250 50 0 empty p empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 1020 140 bng 51 250 50 0 empty ] empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 710 80 bng 51 250 50 0 empty w empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 770 80 bng 51 250 50 0 empty r empty 17 7 0 10 #000000 #ffffff
+#ffffff 1;
+#X obj 890 80 bng 51 250 50 0 empty u empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 950 80 bng 51 250 50 0 empty o empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 1010 80 bng 51 250 50 0 empty [ empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#N canvas 0 38 1728 1051 MIDItoDelay 0;
+#X obj 389 238 inlet;
+#X obj 389 310 mtof;
+#X obj 389 367 expr 1000 / \\$f1;
+#X obj 389 440 outlet;
+#X text 440 280 Converting the MIDI values to Delay values., f 19
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 860 400 pd MIDItoDelay;
+#X obj 1080 440 s delay;
+#X text 1100 30 KeyBoard;
+#X obj 1080 140 bng 51 250 50 0 empty a empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 1140 140 bng 51 250 50 0 empty d empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 1200 140 bng 51 250 50 0 empty g empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X msg 1082 304 36;
+#X msg 1142 244 38;
+#X msg 1200 200 40;
+#X obj 1260 140 bng 51 250 50 0 empty h empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 1320 140 bng 51 250 50 0 empty k empty 17 7 0 10 #fcfcfc #000000
+#000000 1;
+#X obj 1380 140 bng 51 250 50 0 empty semicolon 7 0 0 0 1.67772e+07
+#ffffff #000000 #000000 1;
+#X obj 1440 140 bng 51 250 50 0 empty lastkey empty 17 7 0 10 #fcfcfc
+#000000 #000000 1;
+#X msg 1262 244 41;
+#X msg 1320 210 43;
+#X msg 1380 200 45;
+#X obj 1132 84 bng 51 250 50 0 empty s empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 1192 84 bng 51 250 50 0 empty f empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 1312 84 bng 51 250 50 0 empty j empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X msg 1132 294 37;
+#X msg 1192 274 39;
+#X obj 1372 84 bng 51 250 50 0 empty l empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X obj 1432 84 bng 51 250 50 0 empty ' empty 17 7 0 10 #000000 #ffffff
+#000000 1;
+#X msg 1312 304 42;
+#X msg 1372 274 44;
+#X msg 1430 250 46;
+#N canvas 0 37 1728 1080 MIDItoDelay 0;
+#X obj 389 238 inlet;
+#X obj 389 310 mtof;
+#X obj 389 367 expr 1000 / \\$f1;
+#X obj 389 440 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 1282 404 pd MIDItoDelay;
+#X msg 660 300 24;
+#X msg 1440 310 47;
+#X msg 710 290 25;
+#X msg 720 240 26;
+#X msg 770 270 27;
+#X msg 780 200 28;
+#X msg 840 240 29;
+#X msg 890 300 30;
+#X msg 900 210 31;
+#X msg 950 270 32;
+#X msg 960 210 33;
+#X msg 1010 250 34;
+#X msg 1020 290 35;
+#X text 1030 470 Sending the signal Wirelessly(Look for Receive delay)
+, f 24;
+#X obj 360 440 delwrite~ KARP 1000;
+#X obj 40 160 delread~ KARP;
+#X obj 30 200 cnv 15 163 91 empty empty empty 20 12 0 14 #e17714 #404040
+0;
+#X text 40 210 Damping +LowPass Filtering, f 10;
+#X obj 120 220 *~ 0.9;
+#X obj 120 260 lop~ 1000;
+#X obj 240 70 cnv 15 308 257 empty empty Produces\ a\ quick\ sound\ using\ ADSR
+20 12 0 14 #3caf3e #404040 0;
+#X obj 370 110 receive delay;
+#N canvas 0 37 1728 1080 ADSR 0;
+#X obj 170 110 cnv 15 1025 512 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj 340 170 bng 27 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 1;
+#X obj 290 500 line;
+#X obj 390 260 bng 23 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 1;
+#X text 370 340 Decay;
+#X text 220 260 Attack;
+#X obj 490 430 bng 23 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 1;
+#X text 550 470 Release;
+#X text 480 370 Sustain;
+#X obj 390 230 delay 10;
+#X msg 370 320 0.5 5;
+#X obj 480 390 delay 5;
+#X msg 490 470 0 5;
+#X msg 270 260 1 10;
+#X obj 343 126 inlet;
+#X obj 293 553 outlet;
+#X text 630 160 This patch produces an ADSR enveloppe seen in the course
+slides:AttackDecaySustainRelease, f 76;
+#X connect 1 0 13 0;
+#X connect 1 0 9 0;
+#X connect 2 0 15 0;
+#X connect 3 0 10 0;
+#X connect 3 0 11 0;
+#X connect 6 0 12 0;
+#X connect 9 0 3 0;
+#X connect 10 0 2 0;
+#X connect 11 0 6 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 1 0;
+#X restore 370 180 pd ADSR;
+#X obj 250 150 noise~;
+#X obj 350 270 *~;
+#X text 370 400 Records Incoming sound as a buffer, f 22;
+#X text 360 470 delread will later read this buffer, f 21;
+#X obj 150 440 *~;
+#X obj 252 219 *~ 0.75;
+#X obj 780 880 delwrite~ flanger 1000;
+#X obj 950 620 osc~;
+#X obj 950 649 +~ 1;
+#X obj 950 679 /~ 2;
+#X obj 950 772 delread4~ flanger;
+#X obj 828 1026 dac~;
+#X obj 1010 840 *~ 0.7;
+#X obj 830 990 +~;
+#X obj 40 490 s~ input;
+#X obj 740 830 receive~ input;
+#X obj 950 740 *~;
+#X floatatom 990 710 5 0 0 1 Flanger flanger - 0 0 0, f 5;
+#X obj 140 500 dac~;
+#X obj 40 430 *~;
+#X obj 60 400 tgl 15 0 empty flangeron FlangerOn 17 7 0 10 #fcfcfc
+#000000 #000000 0 1 0;
+#N canvas 0 37 1728 1080 negate 0;
+#X obj 50 80 expr 1 - \\$f1, f 13;
+#X obj 50 170 outlet;
+#X obj 47 42 receive flangeron;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X restore 190 380 pd negate;
+#X obj 170 410 tgl 15 0 empty empty FlangerOff 17 7 0 10 #fcfcfc #000000
+#000000 1 1 0;
+#X obj 1540 380 cnv 15 104 165 empty empty Flanger\ Intensity 12 8
+0 8 #676565 #000000 0;
+#X obj 1570 490 tgl 38 0 flangeron empty ON/OFF 6 44 0 10 #fcfcfc #000000
+#000000 0 1 1;
+#X obj 1570 402 flatgui/knob 43 43 0 10 0 0 flanger empty empty -17
+-8 0 8 #dea712 #000000 #000000 0 1 1 2 3 4;
+#X floatatom 1590 460 5 0 0 0 Delay flanger - 0 0 1, f 5;
+#X obj 180 670 key;
+#X obj 180 708 select 113 119 101 114 116 121 117 105 111 112 91 93
+;
+#X obj 60 758 send q;
+#X obj 110 758 send w;
+#X obj 160 758 send e;
+#X obj 210 758 send r;
+#X obj 260 758 send t;
+#X obj 310 758 send y;
+#X obj 360 758 send u;
+#X obj 410 758 send i;
+#X obj 460 758 send o;
+#X obj 510 758 send p;
+#X obj 560 758 send [;
+#X obj 610 758 send ];
+#X obj 180 820 key;
+#X obj 20 908 send a;
+#X obj 70 908 send s;
+#X obj 120 908 send d;
+#X obj 170 908 send f;
+#X obj 220 908 send g;
+#X obj 270 908 send h;
+#X obj 320 908 send j;
+#X obj 370 908 send k;
+#X obj 420 908 send l;
+#X obj 460 948 send semicolon;
+#X obj 510 908 send ';
+#X obj 180 858 select 97 115 100 102 103 104 106 107 108 59 39 47;
+#X obj 580 928 send lastkey;
+#X text 20 950 *Last key does not work;
+#X obj 1160 580 cnv 15 513 485 empty empty README 194 11 0 20 #e0e0e0
+#404040 0;
+#X text 160 110 Damping;
+#X obj 1540 150 cnv 15 104 217 empty empty Damping 20 12 0 14 #676565
+#000000 0;
+#X obj 1580 190 vsl 31 146 0.4 0.99 0 0 damping empty empty 0 -9 0
+10 #fcfcfc #000000 #000000 0 1 0 1;
+#X text 860 640 Delay Oscillates between 0 and Flanger Intensity,
+f 12;
+#X obj 154 352 loadbang;
+#X text 1180 610 You can use your laptop’s keyboard to play the keyboard
+in the patch.--This patch is designed for a QWERTY keyboard--The
+left octave is the keys from q to ].The right octave is the keys from
+a to . Press the Q button on your keyboard. To use the flanger
+effect \, you first need to toggle it on or off and control the intensity
+of the effect using the knob.  You can also control the damping
+intensity using the slider \, the damping value is set to 0.9 by default.
+ READ IF NOT WORKING:Since toggles in PureData are initialised as
+0 \, when first starting up you might have to turn the flanger effect
+on and off again to update the toggle. This is why i use a loadbang
+but i put this here just in case.;
+#X connect 5 0 63 0;
+#X connect 6 0 66 1;
+#X connect 7 0 48 0;
+#X connect 8 0 51 0;
+#X connect 9 0 53 0;
+#X connect 10 0 5 0;
+#X connect 12 0 54 0;
+#X connect 13 0 56 0;
+#X connect 14 0 58 0;
+#X connect 15 0 60 0;
+#X connect 16 0 50 0;
+#X connect 17 0 52 0;
+#X connect 18 0 55 0;
+#X connect 19 0 57 0;
+#X connect 20 0 59 0;
+#X connect 21 0 22 0;
+#X connect 24 0 27 0;
+#X connect 25 0 28 0;
+#X connect 26 0 29 0;
+#X connect 27 0 47 0;
+#X connect 28 0 47 0;
+#X connect 29 0 47 0;
+#X connect 30 0 34 0;
+#X connect 31 0 35 0;
+#X connect 32 0 36 0;
+#X connect 33 0 49 0;
+#X connect 34 0 47 0;
+#X connect 35 0 47 0;
+#X connect 36 0 47 0;
+#X connect 37 0 40 0;
+#X connect 38 0 41 0;
+#X connect 39 0 44 0;
+#X connect 40 0 47 0;
+#X connect 41 0 47 0;
+#X connect 42 0 45 0;
+#X connect 43 0 46 0;
+#X connect 44 0 47 0;
+#X connect 45 0 47 0;
+#X connect 46 0 47 0;
+#X connect 47 0 22 0;
+#X connect 48 0 21 0;
+#X connect 49 0 47 0;
+#X connect 50 0 21 0;
+#X connect 51 0 21 0;
+#X connect 52 0 21 0;
+#X connect 53 0 21 0;
+#X connect 54 0 21 0;
+#X connect 55 0 21 0;
+#X connect 56 0 21 0;
+#X connect 57 0 21 0;
+#X connect 58 0 21 0;
+#X connect 59 0 21 0;
+#X connect 60 0 21 0;
+#X connect 63 0 66 0;
+#X connect 66 0 67 0;
+#X connect 67 0 62 0;
+#X connect 67 0 75 0;
+#X connect 67 0 90 0;
+#X connect 69 0 70 0;
+#X connect 70 0 72 1;
+#X connect 71 0 76 0;
+#X connect 72 0 62 0;
+#X connect 75 0 89 0;
+#X connect 75 0 89 1;
+#X connect 76 0 72 0;
+#X connect 78 0 79 0;
+#X connect 79 0 80 0;
+#X connect 80 0 87 0;
+#X connect 81 0 83 0;
+#X connect 83 0 84 1;
+#X connect 83 0 77 0;
+#X connect 84 0 82 0;
+#X connect 84 0 82 1;
+#X connect 86 0 77 0;
+#X connect 86 0 84 0;
+#X connect 87 0 81 0;
+#X connect 88 0 87 1;
+#X connect 90 0 85 0;
+#X connect 91 0 90 1;
+#X connect 92 0 93 0;
+#X connect 93 0 75 1;
+#X connect 98 0 99 0;
+#X connect 99 0 100 0;
+#X connect 99 1 101 0;
+#X connect 99 2 102 0;
+#X connect 99 3 103 0;
+#X connect 99 4 104 0;
+#X connect 99 5 105 0;
+#X connect 99 6 106 0;
+#X connect 99 7 107 0;
+#X connect 99 8 108 0;
+#X connect 99 9 109 0;
+#X connect 99 10 110 0;
+#X connect 99 11 111 0;
+#X connect 112 0 124 0;
+#X connect 124 0 113 0;
+#X connect 124 1 114 0;
+#X connect 124 2 115 0;
+#X connect 124 3 116 0;
+#X connect 124 4 117 0;
+#X connect 124 5 118 0;
+#X connect 124 6 119 0;
+#X connect 124 7 120 0;
+#X connect 124 8 121 0;
+#X connect 124 9 122 0;
+#X connect 124 10 123 0;
+#X connect 124 11 125 0;
+#X connect 132 0 93 0;
